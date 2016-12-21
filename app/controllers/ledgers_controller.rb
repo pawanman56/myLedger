@@ -9,6 +9,11 @@ class LedgersController < ApplicationController
     
     def create
         @ledger = Ledger.create(ledger_params)
+        if @ledger.valid?
+            flash[:success] = "This record has been entered!"
+        else
+            flash[:alert] = "Woops! Looks like some error occured!"
+        end
         redirect_to root_path
     end
     
@@ -19,10 +24,10 @@ class LedgersController < ApplicationController
     def update
         @ledger = Ledger.find(params[:id])
         if @ledger.update(ledger_params)
-            #flash[:success] = "This entry has been updated!"
+            flash[:success] = "This entry has been updated!"
             redirect_to root_path
         else
-            #flash[:alert] = "Woops! Looks like there is an error."
+            flash[:alert] = "Woops! Looks like there is an error."
             redirect_to edit_ledger_path(params[:id])
         end
     end

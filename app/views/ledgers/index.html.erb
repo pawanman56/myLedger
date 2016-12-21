@@ -1,7 +1,10 @@
 <div class="container">
     <h1>Balance: <%= @blnc %></h1>
     <h1>Debt: <%= @dbt %></h1>
-    <h1>Total: <%= @amt %></h1>
+    <h1>Total: <%= @amt %></h1><br/>
+    
+    <%= render 'shared/flash_messages' %>
+    
     <table class="table">
         <tbody>
             <tr>

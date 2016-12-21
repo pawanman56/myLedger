@@ -1,5 +1,7 @@
 <h1>Revise Your Entry</h1>
 
+<%= render 'shared/flash_messages' %>
+
 <div class="container">
     <%= simple_form_for @ledger, method: :patch do |f| %>
         <%= f.input :title, as: :string %>
