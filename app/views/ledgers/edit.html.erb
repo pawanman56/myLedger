@@ -2,13 +2,12 @@
 
 <div class="container">
     <%= simple_form_for @ledger, method: :patch do |f| %>
-        <%= f.label :title, as: :string %>
-        <%= f.input_field :title, class: "form-control" %>
-        <%= f.label :amount, as: :integer %>
-        <%= f.input_field :amount, as: :integer, class: "form-control" %>
-        <%= f.label :date, class: "form-group" %>
-        <%= f.input_field :date, as: :date, class: "form-control" %>
-        <br/>
+        <%= f.input :title, as: :string %>
+        
+        <%= f.input :amount, as: :integer %>
+        
+        <%= f.input :date, as: :date, class: "form-inline" %>
+        
         <%= f.submit 'Update', class: 'btn btn-primary' %>
     <% end %>
 </div>
