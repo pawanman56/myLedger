@@ -18,10 +18,10 @@
                 <td><%= ledger.title %></td>
                 <td><%= ledger.amount %></td>
                 <td>
-                    <%= link_to 'Edit' %>
+                    <%= link_to 'Edit', edit_ledger_path(ledger), class: "btn btn-warning" %>
                 </td>
                 <td>
-                    <%= link_to 'Delete' %>
+                    <%= link_to 'Delete', ledger_path(ledger), class: "btn btn-danger", data: {confirm: "Are you sure?"} %>
                 </td>
             </tr>
             <% end %>

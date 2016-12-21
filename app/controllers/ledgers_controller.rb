@@ -7,6 +7,21 @@ class LedgersController < ApplicationController
         @ledger = Ledger.create(ledger_params)
         redirect_to root_path
     end
+    
+    def edit
+        @ledger = Ledger.find(params[:id])
+    end
+    
+    def update
+        @ledger = Ledger.find(params[:id])
+        if @ledger.update(ledger_params)
+            flash[:success] = "This entry has been updated!"
+            redirect_to root_path
+        else
+            flash[:alert] = "Woops! Looks like there is an error."
+            redirect_to edit_ledger_path(params[:id])
+        end
+    end
 
     private
 
