@@ -1,4 +1,4 @@
-<nav class="navbar navbar-default">
+<nav class="navbar">
   <div class="container-fluid">
     <!-- Brand and toggle get grouped for better mobile display -->
     <div class="navbar-header">
@@ -10,4 +10,17 @@
       </button>
       <a class="navbar-brand" href="#">All Ledger</a>
     </div>
+    
+    <div class="navbar navbar-right">
+        <ul class="nav navbar-nav">
+            <li><%= link_to 'New Entery' %></li>
+        </ul>
+    </div>
+    
+  </div>
 </nav>
+
+<% @ledgers.each do |ledger| %>
+  <h3><%= ledger.title %></h3>
+  <h4><%= ledger.amount %></h4>
+<% end %>
