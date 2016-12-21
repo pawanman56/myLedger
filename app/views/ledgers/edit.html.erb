@@ -1,7 +1,7 @@
 <h1>Revise Your Entry</h1>
 
 <div class="container">
-    <%= simple_form_for :ledger, method: :patch do |f| %>
+    <%= simple_form_for @ledger, method: :patch do |f| %>
         <%= f.label :title, as: :string %>
         <%= f.input_field :title, class: "form-control" %>
         <%= f.label :amount, as: :integer %>

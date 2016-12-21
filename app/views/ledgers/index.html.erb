@@ -1,7 +1,7 @@
 <div class="container">
-    <h1>Balance:</h1>
-    <h1>Debt:</h1>
-    <h1>Total:</h1>
+    <h1>Balance: <%= @blnc %></h1>
+    <h1>Debt: <%= @dbt %></h1>
+    <h1>Total: <%= @amt %></h1>
     <table class="table">
         <tbody>
             <tr>
@@ -21,7 +21,7 @@
                     <%= link_to 'Edit', edit_ledger_path(ledger), class: "btn btn-warning" %>
                 </td>
                 <td>
-                    <%= link_to 'Delete', ledger_path(ledger), class: "btn btn-danger", data: {confirm: "Are you sure?"} %>
+                    <%= link_to 'Delete', ledger_path(ledger), method: :delete, class: "btn btn-danger", data: {confirm: "Are you sure?"} %>
                 </td>
             </tr>
             <% end %>
