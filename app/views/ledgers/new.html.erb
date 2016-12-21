@@ -1,0 +1,11 @@
+<div class="container">
+    <%= simple_form_for :ledger, url: Ledger.new do |f| %>
+        <%= f.label :title, as: :string %>
+        <%= f.input_field :title, class: "form-control" %>
+        <%= f.label :amount, as: :integer %>
+        <%= f.input_field :amount, as: :integer, class: "form-control" %>
+        <%= f.label :date, class: "form-group" %>
+        <%= f.input_field :date, as: :date, class: "form-control" %>
+        <%= f.submit 'Create Record', class: 'btn btn-primary' %>
+    <% end %>
+</div>
