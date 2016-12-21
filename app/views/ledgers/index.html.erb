@@ -20,7 +20,34 @@
   </div>
 </nav>
 
-<% @ledgers.each do |ledger| %>
-  <h3><%= ledger.title %></h3>
-  <h4><%= ledger.amount %></h4>
-<% end %>
+
+<div class="container">
+    <h1>Balance:</h1>
+    <h1>Debt:</h1>
+    <h1>Total:</h1>
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Date</th>
+                <th>Title</th>
+                <th>Amount</th>
+                <th></th>
+                <th></th>
+            </tr>
+            
+            <% @ledgers.each do |ledger| %>
+            <tr>
+                <td><%= ledger.date %></td>
+                <td><%= ledger.title %></td>
+                <td><%= ledger.amount %></td>
+                <td>
+                    <%= link_to 'Edit' %>
+                </td>
+                <td>
+                    <%= link_to 'Delete' %>
+                </td>
+            </tr>
+            <% end %>
+        </tbody>
+    </table>
+</div>
