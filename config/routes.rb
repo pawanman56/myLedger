@@ -6,4 +6,6 @@ Rails.application.routes.draw do
   # root 'welcome#index'
 
   root 'ledgers#index'
+  
+  resources :ledgers
 end
